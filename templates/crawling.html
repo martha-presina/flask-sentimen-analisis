@@ -1,0 +1,47 @@
+{% include 'header.html' %}
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center justify-content-lg-between">
+    <h1 class="logo me-auto me-lg-0">
+      <a href="{{ url_for('index') }}">Mp<span>.</span></a>
+    </h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="nav navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+        <li><a class="nav-link active" href="{{ url_for('crawling') }}">Prediksi Sentimen</a></li>
+        <li><a class="nav-link" href="{{ url_for('upload') }}">Komparasi Model</a></li>
+        <li><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+    <!-- .navbar -->
+  </div>
+</header>
+<!-- End Header -->
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center justify-content-center">
+  <div class="container" data-aos="fade-up">
+    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+      <div class="col-xl-6 col-lg-8">
+        <h1>Prediksi Sentimen<span>.</span></h1>
+        <h2>Masukkan keyword yang berhubungan dengan Corona/Covid-19 untuk mengambil data Twittter</h2>
+      </div>
+    </div>
+
+    <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+      <form method="POST">
+        <div class="col-md-4 form-group ms-auto me-auto">
+          <input type="text" name="data" class="form-control" id="data" placeholder="Keyword" required />
+        </div>
+        <div class="text-center mt-3">
+          <input class="btn" type="submit" name="submit"></input>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% include 'footer.html' %}

@@ -1,0 +1,128 @@
+{% include 'header.html' %}
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top" style="background: rgba(0, 0, 0, 0.8)">
+  <div class="container d-flex align-items-center justify-content-lg-between">
+    <h1 class="logo me-auto me-lg-0">
+      <a href="{{ url_for('index') }}">Mp<span>.</span></a>
+    </h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="nav navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+        <li><a class="nav-link" href="{{ url_for('crawling') }}">Prediksi Sentimen</a></li>
+        <li><a class="nav-link active" href="{{ url_for('upload') }}">Komparasi Model</a></li>
+        <li><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+    <!-- .navbar -->
+  </div>
+</header>
+<!-- End Header -->
+<section class="mt-5">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Komparasi Model</h2>
+      <p>Kombinasi Term Frequency & Kernel SVM</p>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" style="border: 1px solid black">
+        <div class="icon-box">
+          <div class="container text-center">
+            <h2>Skema 1</h2>
+            <p style="margin-top: -10px">TF-IDF & Polynomial</p>
+            <hr />
+          </div>
+          <h4>Classification Report</h4>
+          {{ df_report1 | safe }}
+          <img src="{{ url_for('static', filename = 'image/confusion_matrix1.png') }}" />
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" style="border: 1px solid black">
+        <div class="icon-box">
+          <div class="container text-center">
+            <h2>Skema 2</h2>
+            <p style="margin-top: -10px">TF-IDF & Radial Basis Function</p>
+            <hr />
+          </div>
+          <h4>Classification Report</h4>
+          {{ df_report2 | safe }}
+          <img src="{{ url_for('static', filename = 'image/confusion_matrix2.png') }}" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" style="border: 1px solid black">
+        <div class="icon-box">
+          <div class="container text-center">
+            <h2>Skema 3</h2>
+            <p style="margin-top: -10px">TF-RF & Polynomial</p>
+            <hr />
+          </div>
+          <h4>Classification Report</h4>
+          {{ df_report3 | safe }}
+          <img src="{{ url_for('static', filename = 'image/confusion_matrix3.png') }}" />
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" style="border: 1px solid black">
+        <div class="icon-box">
+          <div class="container text-center">
+            <h2>Skema 4</h2>
+            <p style="margin-top: -10px">TF-RF & Radial Basis Function</p>
+            <hr />
+          </div>
+          <h4>Classification Report</h4>
+          {{ df_report4 | safe }}
+          <img src="{{ url_for('static', filename = 'image/confusion_matrix4.png') }}" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ======= Services Section ======= -->
+<section id="services" class="services">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Komparasi Model</h2>
+      <p>Summary</p>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6 col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="icon-box">
+          <h4><a href="">TF-IDF & Polynomial</a></h4>
+          <p>Accuracy: {{akurasi1}}%</p>
+          <p>F1-Score: {{f1}}%</p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="icon-box">
+          <h4><a href="">TF-IDF & RBF</a></h4>
+          <p>Accuracy: {{akurasi2}}%</p>
+          <p>F1-Score: {{f2}}%</p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-4 mt-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="icon-box">
+          <h4><a href="">TF-RF & Polynomial</a></h4>
+          <p>Accuracy: {{akurasi3}}%</p>
+          <p>F1-Score: {{f3}}%</p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-4 mt-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="icon-box">
+          <h4><a href="">TF-RF & RBF</a></h4>
+          <p>Accuracy: {{akurasi4}}%</p>
+          <p>F1-Score: {{f4}}%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Services Section -->
+
+{% include 'footer.html' %}

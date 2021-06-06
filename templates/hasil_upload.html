@@ -1,0 +1,41 @@
+{% include 'header.html' %}
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top" style="background: rgba(0, 0, 0, 0.8)">
+  <div class="container d-flex align-items-center justify-content-lg-between">
+    <h1 class="logo me-auto me-lg-0">
+      <a href="{{ url_for('index') }}">Mp<span>.</span></a>
+    </h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="nav navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+        <li><a class="nav-link " href="{{ url_for('crawling') }}">Prediksi Sentimen</a></li>
+        <li><a class="nav-link active" href="{{ url_for('upload') }}">Komparasi Model</a></li>
+        <li><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+    <!-- .navbar -->
+  </div>
+</header>
+<!-- End Header -->
+<!-- ======= Services Section ======= -->
+<section class="mt-5">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Komparasi Model</h2>
+      <p>Sampel File Terupload</p>
+    </div>
+    <div>
+      <form action="/preprocessing" method="POST">
+        {{ data | safe }}
+        <div class="text-center mt-3">
+            <input class="btn" type="submit" name="submit" value="Lanjut Preprocessing"></input>
+          </div>
+      </form>
+    </div>
+  </div>
+</section>
+{% include 'footer.html' %}

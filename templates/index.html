@@ -1,0 +1,100 @@
+{% include 'header.html' %}
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center justify-content-lg-between">
+    <h1 class="logo me-auto me-lg-0">
+      <a href="{{ url_for('index') }}">Mp<span>.</span></a>
+    </h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="nav navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link active" href="{{ url_for('index') }}">Home</a></li>
+        <li><a class="nav-link" href="{{ url_for('crawling') }}">Prediksi Sentimen</a></li>
+        <li><a class="nav-link" href="{{ url_for('upload') }}">Komparasi Model</a></li>
+        <li><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+    <!-- .navbar -->
+  </div>
+</header>
+<!-- End Header -->
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center justify-content-center">
+  <div class="container" data-aos="fade-up">
+    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+      <div class="col-xl-6 col-lg-8">
+        <h1>Sentimen Analisis Twitter<span>.</span></h1>
+      </div>
+    </div>
+
+    <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+      <div class="col-xl-2 col-md-4">
+        <div class="icon-box">
+          <i class="ri-bar-chart-box-line"></i>
+          <h3><a href="{{ url_for('crawling') }}">Prediksi Sentimen</a></h3>
+        </div>
+      </div>
+      <div class="col-xl-2 col-md-4">
+        <div class="icon-box">
+          <i class="ri-calendar-todo-line"></i>
+          <h3><a href="{{ url_for('upload') }}">Komparasi Model</a></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Hero -->
+
+<div id="main">
+  <!-- ======= Section ======= -->
+  <section class="about">
+    <div class="container" data-aos="fade-up">
+      <div class="row">
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+          <div class="section-title">
+            <h2>Cara Kerja</h2>
+            <p>Prediksi Sentimen</p>
+          </div>
+          <p>Melakukan prediksi sentimen terhadap tweet publik terkait Corona / Covid-19.</p>
+          <ul>
+            <li><i class="ri-check-double-line"></i> Klik menu Prediksi Sentimen</li>
+            <li><i class="ri-check-double-line"></i> Masukkan keyword yang berkaitan dengan Corona pada textbox yang tersedia</li>
+            <li><i class="ri-check-double-line"></i> Klik tombol Kirim untuk memulai prediksi</li>
+            <li><i class="ri-check-double-line"></i> Sistem akan mengambil data twitter sesuai dengan keyword yang telah dimasukkan</li>
+            <li><i class="ri-check-double-line"></i> Server akan melakukan proses pembersihan data hingga klasifikasi</li>
+            <li><i class="ri-check-double-line"></i> Menampilkan hasil prediksi</li>
+          </ul>
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+          <div class="section-title">
+            <h2>Cara Kerja</h2>
+            <p>Komparasi Model</p>
+          </div>
+          <p>Membandingkan performa kombinasi kernel pada algoritma Support Vector Machine dan Term Frequency terhadap analisis sentimen.</p>
+          <p>Skema model:</p>
+          <ol>
+            <li>TF-IDF & Kernel Polynomial</li>
+            <li>TF-IDF & Kernel Radial Basis Function</li>
+            <li>TF-RF & Kernel Polynomial</li>
+            <li>TF-RF & Kernel Radial Basis Function</li>
+          </ol>
+          <ul>
+            <li><i class="ri-check-double-line"></i> Klik menu Komparasi Model</li>
+            <li><i class="ri-check-double-line"></i> Masukkan file dengan ekstensi csv</li>
+            <li><i class="ri-check-double-line"></i> Pastikan terdapat 2 kolom yaitu kolom Teks dan Label</li>
+            <li><i class="ri-check-double-line"></i> Kolom Teks berisikan data yang akan diprediksi</li>
+            <li><i class="ri-check-double-line"></i> Kolom Label berisikan kelas dari kolom Teks, dimana terdapat kelas Positif, Negatif, dan Netral</li>
+            <li><i class="ri-check-double-line"></i> Klik tombol untuk memulai proses komparasi</li>
+            <li><i class="ri-check-double-line"></i> Menampilkan hasil komparasi model</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- End Services Section -->
+{% include 'footer.html' %}
